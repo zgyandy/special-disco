@@ -1,6 +1,25 @@
 <template>
-  <div class="home">
+  <div class="store">
     <dl class="box">
+      <dt>vuex</dt>
+      <dd>
+        <p class="title">payload</p>
+        <Btn :btnName='btn1' :className="gray" @onClick="subOne"></Btn>
+        <p class="num">{{ $store.state.numOne }}</p>
+        <Btn :btnName='btn2' :className="green" @onClick="addOne"></Btn>
+      </dd>
+      <dd>
+        <p class="title">commit</p>
+        <Btn :btnName='btn1' :className="gray" @onClick="subTwo"></Btn>
+        <p class="num">{{ $store.state.numTwo }}</p>
+        <Btn :btnName='btn2' :className="green" @onClick="addTwo"></Btn>
+      </dd>
+      <dd>
+        <p class="title">dispatch</p>
+        <Btn :btnName='btn1' :className="gray" @onClick="addThr"></Btn>
+        <p class="num">{{ $store.state.numThr }}</p>
+        <Btn :btnName='btn2' :className="green" @onClick="subThr"></Btn>
+      </dd>
       <dd>
         <p class="title">getter1</p>
         <Btn :btnName='btn1' :className="gray"></Btn>
@@ -67,21 +86,21 @@ export default {
 }
 </script>
 
-
 <style scoped lang='less'>
+  .store {
     .box {
       width: 700 - 40px;
-      height: 300 - 40px;
+      height: 500 - 40px;
       margin: 0 auto;
       line-height: 40px;
       border: 1px dashed #ccc;
       padding: 20px;
       border-radius: 10px;
+      padding-top: 0;
       dt {
         height: 40px;
-        padding-top: 20px;
         text-align: center;
-        font-size: 18px;
+        font-size: 20px;
       }
       dd {
         height: 40px;
@@ -106,4 +125,5 @@ export default {
         margin-bottom: 0;
       }
     }
+  }
 </style>
