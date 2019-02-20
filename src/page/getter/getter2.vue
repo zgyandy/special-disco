@@ -1,38 +1,28 @@
 <template>
-  <div class="home">
-    <dl class="box">
-      <dd>
-        <p class="title">通过方法访问</p>
-        <p class="num">{{ todos[0]['text'] }}</p>
-      </dd>
-      <dd>
-        <p class="title">通过属性访问</p>
-        <p class="num">{{ doneTodosCount }}</p>
-      </dd>
-      <dd>
-        <p class="title"><router-link to = '/getter2'>getter2</router-link></p>
-      </dd>
-    </dl>
-  </div>
+<div class="getter2">
+  <dl class="box">
+    <dd>
+      <p class="title">通过方法访问</p>
+      <p class="num">{{ doneTodos[2]['text'] }}</p>
+    </dd>
+    <dd>
+      <p class="title">通过属性访问</p>
+      <p class="num">{{ doneTodosCount }} {{NumFilter}}</p>
+    </dd>
+    <dd>
+    </dd>
+  </dl>
+</div>
 </template>
 
-<script>
-import Btn from '@/components/common/btn'
+<script type='text/ecmascript-6'>
+import { mapGetters } from 'vuex';
 export default {
-  name: 'home',
-	computed:{
-		todos: function() {
-      //通过方法访问
-      return this.$store.getters.doneTodos;
-    },
-    doneTodosCount () {
-      return this.$store.getters.doneTodosCount
-    },
-    // ...mapGetters(['doneTodos', 'doneTodosCount'])
+  computed: {
+    ...mapGetters(['doneTodosCount', 'doneTodos', 'NumFilter'])
   }
 }
 </script>
-
 
 <style scoped lang='less'>
   .box {

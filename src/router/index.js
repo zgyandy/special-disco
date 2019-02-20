@@ -14,6 +14,11 @@ const router = new Router ({
       path: '/store',
       name: 'store',
       component: resolve => require(['../page/store/index.vue'], resolve)
+    },
+    {
+      path: '/getter2',
+      name: 'getter2',
+      component: resolve => require(['../page/getter/getter2.vue'], resolve)
     }
   ]
 })

@@ -7,46 +7,8 @@
 </template>
 
 <script>
-import Btn from './components/common/btn'
-
 export default {
-  data () {
-    return {
-      btn1: '-',
-      btn2: '+',
-      gray: 'gray',
-      green: 'green'
-    }
-  },
-  name: 'app',
-  methods: {
-    subOne: (_this) => {
-      _this.$store.commit('payLoad', 0)
-    },
-    addOne: (_this) => {
-      _this.$store.commit('payLoad', 12)
-    },
-    subTwo: (_this) => {
-      _this.$store.commit('subTwo')
-    },
-    addTwo: (_this) => {
-      _this.$store.commit('addTwo')
-    },
-    subThr: (_this) => {
-      _this.$store.dispatch('ADDTHR')
-    },
-    addThr: (_this) => {
-      _this.$store.dispatch('SUBTHR')
-    }
-  },
-  computed: {
-    Count () {
-      // return this.
-    }
-  },
-  components: {
-    Btn
-  }
+  name: 'app'
 }
 </script>
 
