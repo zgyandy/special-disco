@@ -26,7 +26,7 @@ address,code,th {
   font-style: normal;
   font-weight: normal;
 }
-ul,ol {
+ul,ol,li {
   list-style: none;
 }
 body {

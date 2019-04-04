@@ -12,7 +12,8 @@ export default {
       default: '按钮'
     },
     className: {
-      type: String
+      type: String,
+      // default: 'red'
     }
   },
   methods: {

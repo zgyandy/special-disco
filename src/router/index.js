@@ -19,6 +19,30 @@ const router = new Router ({
       path: '/getter2',
       name: 'getter2',
       component: resolve => require(['../page/getter/getter2.vue'], resolve)
+    }, {
+      path: '/watch',
+      name: 'watch',
+      component: resolve => require(['../page/watch/watch.vue'], resolve)
+    }, {
+      path: '/parent',
+      name: 'parent',
+      component: resolve => require(['../page/parent/index.vue'], resolve),
+      children: [
+        {
+          path: '/parent/a',
+          name: 'one',
+          component: resolve => require(['../page/parent/sonOne.vue'], resolve)
+        },
+        {
+          path: '/parent/b',
+          name: 'two',
+          component: resolve => require(['../page/parent/sonOne.vue'], resolve)
+        }
+      ]
+    }, {
+      path: '/render',
+      name: 'render',
+      component: resolve => require(['../page/render/index.vue'], resolve)
     }
   ]
 })

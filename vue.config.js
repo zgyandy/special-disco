@@ -1,5 +1,5 @@
-// var path = require('path')
-// var PrerenderSpaPlugin = require('prerender-spa-plugin')
+var path = require('path')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 module.exports = {
   assetsDir: 'vue',
   productionSourceMap: false,
@@ -15,10 +15,13 @@ module.exports = {
   },
   configureWebpack: {
     plugins: [
-      // new PrerenderSpaPlugin({
-      //   // 编译后的html需要存放的路径
-      //   staticDir: path.join(__dirname, './dist')
-      // })
+      new PrerenderSpaPlugin({
+        // 编译后的html需要存放的路径
+        staticDir: path.join(__dirname, './dist'),
+        // 言语渲染的页面
+        routes: ['/', '/home', '/store'],
+        renderAfterElementExists : 'document.querySelector("#app")'
+      })
     ]
   }
 }

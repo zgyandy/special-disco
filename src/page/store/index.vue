@@ -43,8 +43,6 @@
 </template>
 
 <script>
-import Btn from '@/components/common/btn'
-
 export default {
   data () {
     return {
@@ -79,9 +77,6 @@ export default {
     Count () {
       // return this.
     }
-  },
-  components: {
-    Btn
   }
 }
 </script>
